@@ -1,0 +1,28 @@
+Public Sub FadeOutMessage_on_shape(msg As Variant, shape_name As String, sh As Worksheet, _
+         Optional delay As Double = 0.009, Optional loop_counter_max = 100)
+   Dim i As Long, start_timer As Double, shp As Shape
+   
+   Set shp = sh.Shapes(shape_name)
+   
+   shp.Visible = msoCTrue
+   
+   shp.TextFrame2.TextRange.Text = msg
+   
+   For i = 1 To loop_counter_max
+   
+      With shp
+         .Fill.Transparency = i / 100
+      End With
+         
+         start_timer = Timer
+         
+         'delay timer
+         Do
+            DoEvents
+         Loop While Timer - start_timer < delay
+         
+   Next i
+   
+   shp.Visible = msoFalse
+   
+End Sub
