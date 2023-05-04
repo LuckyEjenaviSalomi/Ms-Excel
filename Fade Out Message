@@ -11,7 +11,7 @@ Public Sub FadeOutMessage_on_shape(msg As Variant, shape_name As String, sh As W
    For i = 1 To loop_counter_max
    
       With shp
-         .Fill.Transparency = i / 100
+         .Fill.Transparency = i / loop_counter_max
       End With
          
          start_timer = Timer
