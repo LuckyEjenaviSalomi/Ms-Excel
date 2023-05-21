@@ -1,0 +1,12 @@
+Sub remove_shapes_from_workbook(wkname As String)
+   Dim sh As Worksheet, shp As Shape, wk As Workbook
+   Set wk = Workbooks(wkname)
+   
+   For Each sh In wk.Worksheets
+      For Each shp In sh.Shapes
+'         Debug.Print sh.Name, shp.Name
+         shp.Delete
+      Next shp
+   Next sh
+   
+End Sub
