@@ -1,0 +1,11 @@
+Sub protectsheets(pswd as string)
+   For Each sh In ThisWorkbook.Worksheets
+      sh.Protect pswd
+   Next sh
+End Sub
+
+Sub unprotect_sheets(pswd as string)
+    For Each sh In ThisWorkbook.Worksheets
+      sh.Unprotect pswd
+   Next sh
+End Sub
