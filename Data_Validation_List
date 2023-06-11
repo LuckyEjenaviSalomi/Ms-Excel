@@ -1,0 +1,16 @@
+Public Sub data_validation_list(Rng As Range, Optional list_ As String = "High,Medium,Low", _
+               Optional errMsg As String = "Pick only from the drop-down")
+   With Rng.Validation
+        .Delete
+        .Add Type:=xlValidateList, AlertStyle:=xlValidAlertStop, Operator:= _
+        xlBetween, Formula1:=list_
+        .IgnoreBlank = True
+        .InCellDropdown = True
+        .InputTitle = ""
+        .ErrorTitle = ""
+        .InputMessage = ""
+        .ErrorMessage = errMsg
+        .ShowInput = True
+        .ShowError = True
+    End With
+End Sub
