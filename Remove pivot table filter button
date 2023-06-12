@@ -1,0 +1,15 @@
+Sub remove_filter_pf(pivot_table_name As String, workbookname As String, sheetName As String)
+   Dim wkbook As Workbook, sh As Worksheet, pf As PivotField
+   
+   On Error GoTo ErrHandler
+   Set wkbook = Workbooks(workbookname)
+   Set sh = wkbook.Worksheets(sheetName)
+      
+   For Each pf In sh.PivotTables(pivot_table_name).PivotFields
+      pf.EnableItemSelection = Not pf.EnableItemSelection
+   Next pf
+   Exit Sub
+   
+ErrHandler:
+   
+End Sub
