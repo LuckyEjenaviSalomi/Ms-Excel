@@ -4,5 +4,5 @@ Private Sub Change_TextBox_Label(sh As Worksheet, textBoxName As String, Label A
   exit sub
 
   errHandler:
-    msgbox err$, vbcritical, "Error Number: " & err.Number
+    msgbox Error$, vbcritical, "Error Number: " & Err.Number
 End Sub
