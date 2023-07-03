@@ -1,0 +1,8 @@
+Private Sub Change_TextBox_Label(sh As Worksheet, textBoxName As String, Label As String)
+  on error goto errHandler
+  sh.Shapes(textBoxName).TextFrame2.TextRange.Text = Label
+  exit sub
+
+  errHandler:
+    msgbox err$, vbcritical, "Error Number: " & err.Number
+End Sub
